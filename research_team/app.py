@@ -42,6 +42,36 @@ html, body, [class*="css"], .stMarkdown, button, input, textarea, select {
 #MainMenu, footer { visibility: hidden; }
 .block-container { max-width: 1080px; padding-top: 2rem; padding-bottom: 4rem; }
 
+/* ---- Text visibility fix: force the dark palette so text is always readable ---- */
+:root { color-scheme: dark; }
+.stApp, [data-testid="stAppViewContainer"], [data-testid="stHeader"] { background: #0d1320; color: #e6e9f0; }
+[data-testid="stSidebar"], [data-testid="stSidebar"] > div:first-child { background: #101828; }
+.stApp h1, .stApp h2, .stApp h3, .stApp h4, .stApp h5, .stApp h6 { color: #f3f5fa; }
+.stApp :where([data-testid="stMarkdownContainer"]) p,
+.stApp :where([data-testid="stMarkdownContainer"]) li,
+.stApp :where([data-testid="stMarkdownContainer"]) strong,
+.stApp :where([data-testid="stMarkdownContainer"]) em,
+.stApp label, .stApp [data-testid="stWidgetLabel"] p,
+.stApp [data-testid="stRadio"] p, .stApp [data-testid="stProgress"] p,
+.stApp [data-testid="stExpander"] summary, .stApp [data-testid="stExpander"] summary p { color: #e6e9f0; }
+.stApp [data-testid="stCaptionContainer"],
+.stApp [data-testid="stCaptionContainer"] p { color: #8b95ad; }
+.stApp .stTabs [data-baseweb="tab"] { color: #aab3c8; }
+.stApp .stTabs [aria-selected="true"] { color: #2dd4bf; }
+.stApp .stTextArea textarea { color: #e6e9f0; -webkit-text-fill-color: #e6e9f0; caret-color: #2dd4bf; }
+.stApp .stTextArea textarea::placeholder { color: #8b95ad; -webkit-text-fill-color: #8b95ad; opacity: 1; }
+div[data-baseweb="textarea"] { background: #141c2e; border-radius: 12px; }
+div[data-baseweb="select"] * { color: #e6e9f0; }
+div[data-baseweb="select"] svg { fill: #8b95ad; }
+div[data-baseweb="popover"] ul { background: #141c2e; }
+div[data-baseweb="popover"] li { background: #141c2e; color: #e6e9f0; }
+div[data-baseweb="popover"] li:hover { background: #1d2840; }
+div.stButton > button p, div.stDownloadButton > button p { color: inherit; }
+[data-testid="stAlert"] { background: #141c2e; border: 1px solid #25304a; }
+[data-testid="stAlert"] p, [data-testid="stAlert"] div { color: #e6e9f0; }
+[data-testid="stExpander"] details { background: #121a2b; border-color: #25304a; }
+[data-testid="stCode"] pre, [data-testid="stCode"] code { background: #0a101c; color: #e6e9f0; }
+
 /* ---- Masthead ---- */
 .masthead { padding: .4rem 0 1.4rem 0; border-bottom: 1px solid #25304a; margin-bottom: 1.6rem; }
 .masthead h1 {
